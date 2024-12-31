@@ -20,11 +20,12 @@ def main():
     for event in pygame.event.get():
       if event.type == pygame.QUIT:
           return
-    screen.fill("black")
-    player.draw(screen)
-    pygame.display.flip()
     dt_in_millis = clock.tick(60)
     delta_time = dt_in_millis / 1000
+    screen.fill("black")
+    player.draw(screen)
+    player.update(delta_time)
+    pygame.display.flip()
 
 if __name__ == "__main__":
   main()
